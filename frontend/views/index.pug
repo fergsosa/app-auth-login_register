@@ -1,0 +1,24 @@
+extends layout 
+
+block content
+  div.nota
+    h1= title 
+  main.container_index 
+    div
+      h1 Bienvenido ya esta logueado!
+      br
+      a.btn-red(href="/logout") Cerrar Sesión
+      br
+      br
+      br
+      h3 Temas utilizados
+      ul
+        li Backent y Frontend      
+        li Usuarios en base de datos. #[b (Local / MongoDB / MySQL)]
+        li Registro de usuarios.
+        li Autenticación básica con login y password.
+        li Verificación de autenticación. #[b (bcrypt: hashes y salts)]
+        li Json Web Tokens. #[b (JWT)]
+        li Sesión de usuario con cookie.#[b (cookie-parser)]
+        li Rutas protegidas. #[b (Publicas y privadas)]
+        li Cerrar sesión.

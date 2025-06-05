@@ -1,0 +1,33 @@
+extends layout 
+
+block content
+  main.container_form
+    span 
+      img(src="./img/signin.svg", alt="signin")
+    h1 Registro de usuario 
+    form(action="/signin" method="POST" id="register-form")
+      div.form-inputs
+        label
+          input(type="text", id="username", name="username" placeholder=" ", value=userNoMach required)
+          span Usuario
+      div.form-inputs
+        label
+          input(type="password", id="password", name="password" placeholder=" ", required)
+          span Contraseña
+      div.form-inputs
+        label
+          input(type="password", id="confirm-password", name="confirm-password" placeholder=" ", required)
+          span Confirm contraseña     
+
+      if userExist === true  
+        p(style="color: red") ❌ Ya existe ese usuario.
+      if passwordMatch === false
+        p(style="color: red") ❌ Las contraseñas no coinciden.
+      if newUser
+        p(style="color: #008009") ✅ Usuario "#[b #{user}]" fue creado con éxito
+      br
+      br
+      button.add-button(type="submit") Registrar
+      br
+      p ¿Ya tienes una cuenta? - 
+        a.back-button.btn(href="/login") Iniciar sesión aquí↗

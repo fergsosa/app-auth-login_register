@@ -1,0 +1,218 @@
+@import "./styleInitial.css";
+
+body {
+  display: flex;
+  min-height: 100svh;
+}
+
+.nota {
+  position: absolute;
+  opacity: 0.2;
+}
+
+.container_form {
+  max-width: 640px;
+  width: 70svw;
+  min-width: 450px;
+  height: fit-content;
+  max-height: 90svh;
+  margin: 2rem auto;
+  padding: 2rem 2.5rem 1.2rem;
+  border-radius: 34px;
+  box-shadow: 0 11px 34px 0 #78788029;
+  text-align: center;
+  /* overflow: hidden; */
+  overflow-y: auto;
+
+  span:first-child img {
+    max-width: 140px;
+    /* filter: drop-shadow(0 0 1.5px #0004); */
+  }
+
+  form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    --inputs-text: #b0b0b0;
+    --form-bg: #fff;
+    --text-color: #242424;
+
+    .form-inputs {
+      margin: 1rem 0 0.5rem;
+      display: grid;
+      gap: 1.5rem;
+      color: var(--inputs-text);
+      /* border-radius: 12px; */
+      width: 100%;
+      max-width: 480px;
+
+      label {
+        width: 100%;
+        display: grid;
+        grid-template-areas: "input";
+
+        span {
+          grid-area: input;
+          font-weight: 400;
+          z-index: 1;
+          width: max-content;
+          height: 100%;
+          margin-left: 1rem;
+          padding: 0 0.5rem;
+          display: flex;
+          align-items: center;
+
+          transform-origin: left center;
+          transition: transform 0.33s;
+
+          &:focus {
+            color: #07e;
+          }
+        }
+        input {
+          font-family: inherit;
+          grid-area: input;
+          width: 100%;
+          border-radius: 12px;
+          border: 0.5px solid #666;
+          padding: 0.7rem 1.5rem;
+          background-color: var(--form-bg);
+          color: var(--text-color);
+          font-size: 1rem;
+          border: none;
+          outline: 1px solid #999;
+
+          &:focus-visible {
+            outline: none;
+            /* border: 2px solid #08e; */
+            outline: 2px solid #08e;
+          }
+
+          /* &:is(:focus, :not(:placeholder-shown)) + .form_text {  */
+          &:focus + span,
+          &:not(:placeholder-shown) + span {
+            background-color: var(--form-bg);
+            color: var(--text-color);
+            transform: translateY(-50%) scale(0.7);
+          }
+        }
+      }
+    }
+
+    p {
+      /* background-color: red; */
+      font-size: 14px;
+      a {
+        font-size: 14px;
+        color: #06c;
+      }
+    }
+  }
+}
+
+.container_index {
+  width: 100%;
+
+  div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 5rem;
+  }
+}
+
+.error-box {
+  border: 2px solid #f331;
+  box-shadow: 0 11px 34px 0 #f335;
+  h2 {
+    color: #ff3b30;
+  }
+  h3 {
+    font-weight: 400;
+  }
+}
+
+.btn-red {
+  --red: #ff3b30;
+  --white: #fff;
+
+  text-align: center;
+  display: inline-block;
+  font-size: 14px;
+  min-width: 144px;
+  background-color: var(--white);
+  border: 2px solid var(--red);
+  color: var(--red);
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  user-select: none;
+  transition: initial;
+
+  &:active,
+  &:hover {
+    opacity: initial;
+    background-color: var(--red);
+    color: var(--white);
+  }
+}
+
+/* .task-list {
+  margin-top: 2rem;
+  padding: 0;
+  list-style: none;
+  background-color: red;
+}
+
+.task-list li {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  margin: 10px 0;
+  padding: 20px;
+  position: relative;
+}
+
+.task-list li.completed {
+  background-color: #ccc;
+  opacity: 0.5;
+  text-decoration: line-through;
+}
+
+.complete-button {
+  background-color: #0c9344;
+  color: #fff;
+}
+
+.completed .complete-button {
+  display: none;
+}
+
+.uncomplete-button {
+  background-color: #333;
+  color: #fff;
+}
+
+.delete-button {
+  background-color: #e74c3c;
+  color: #fff;
+}
+
+.add-button,
+.edit-button {
+  background-color: #1e99ec;
+  color: #fff;
+}
+
+.back-button {
+  background-color: #666;
+  color: #fff;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-right {
+  text-align: right;
+} */

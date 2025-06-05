@@ -1,0 +1,32 @@
+extends layout 
+
+block content
+  div.nota
+    h3 Usuario: admin 
+    h3 Contraseña: admin 
+  main.container_form
+    span 
+      img(src="./img/aura-login-g.svg", alt="login")
+      //- img(src="./img/aura-login-c.svg", alt="login")
+    h1 Iniciar sesión
+    form(action="/login" method="POST")
+      div.form-inputs
+        label
+          input(type="text", id="username", name="username" placeholder=" ",value=userNoMach, required)
+          span Usuario
+      div.form-inputs
+        label
+          input(type="password", id="password", name="password" placeholder=" ", required)
+          span Contraseña
+
+      if userExist === false  
+        p(style="color: red") ❌ No existe usuario.
+      if passwordMatch === false
+        p(style="color: red") ❌ Contraseña incorrecta.
+
+      br
+      br
+      button.add-button.btn(type="submit") Iniciar Sesión 
+      br
+      p ¿Todavía no tenes una cuenta? - 
+        a.back-button.btn(href="/signin") Regístrate↗
